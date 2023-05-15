@@ -21,26 +21,26 @@ public class CuaHangController {
     public String hienThiCuaHang(Model model) {
         List<CuaHang> cuaHangs = cuaHangRepository.findAll();
         model.addAttribute("cuaHangs", cuaHangs);
-        return "cua-hang";
+        return "cua-hang/cua-hang";
     }
 
     @GetMapping("view-add")
     public String viewAddCuaHang() {
-        return "add-cua-hang";
+        return "cua-hang/add-cua-hang";
     }
 
     @GetMapping("view-update/{id}")
     public String viewUpdateCuaHang(@PathVariable("id") UUID id, Model model) {
         CuaHang cuaHang = cuaHangRepository.findById(id).get();
         model.addAttribute("cuaHang", cuaHang);
-        return "update-cua-hang";
+        return "cua-hang/update-cua-hang";
     }
 
     @GetMapping("detail/{id}")
     public String detailLopHoc(@PathVariable("id") UUID id, Model model) {
         CuaHang cuaHang = cuaHangRepository.findById(id).get();
         model.addAttribute("cuaHang", cuaHang);
-        return "detail-cua-hang";
+        return "cua-hang/detail-cua-hang";
     }
 
     @GetMapping("delete/{id}")
@@ -49,7 +49,7 @@ public class CuaHangController {
         cuaHangRepository.delete(cuaHang);
         List<CuaHang> cuaHangs = cuaHangRepository.findAll();
         model.addAttribute("cuaHangs", cuaHangs);
-        return "dong-vat";
+        return "cua-hang/cua-hang";
     }
 
     @PostMapping("add")
