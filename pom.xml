@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.poly</groupId>
-    <artifactId>tuphph24187</artifactId>
+    <artifactId>java5-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tuphph24187</name>
-    <description>Demo project for Spring Boot</description>
+    <name>java5-spring</name>
+    <description>java5-spring</description>
     <properties>
         <java.version>17</java.version>
     </properties>
