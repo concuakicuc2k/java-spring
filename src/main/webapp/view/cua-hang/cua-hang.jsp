@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
 <header>
     <h3 style="text-align: center;">Quản Lý Cửa Hàng</h3>
     <section>
@@ -16,10 +16,10 @@
            aria-disabled="true">Add</a>
     </section>
 </header>
-<main class="container">
+<main>
     <section>
-        <table class="table">
-            <thead>
+        <table class="table table-striped mt-3">
+            <thead class="table-primary">
             <tr>
                 <th scope="col">Mã</th>
                 <th scope="col">Tên</th>

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hangnt
-  Date: 22/01/2023
-  Time: 11:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,31 +14,40 @@
 </header>
 <main class="container">
     <section>
-        <form action="/dong-vat/add" method="post">
-            <div class="row mt-4">
+        <form method="POST" action="/cua-hang/add">
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label>Mã</label>
+                    <input type="text" name="ma" class="form-control" />
+                </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên</label>
-                    <input type="text" class="form-control" name="ten"/>
+                    <input type="text" name="ten" class="form-control" />
                 </div>
                 <div class="col-6">
-                    <label>Cân nặng</label>
-                    <input type="text" class="form-control" name="canNang"/>
+                    <label>Địa chỉ</label>
+                    <input type="text" name="diaChi" class="form-control" />
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-3">
                 <div class="col-6">
-                    <label>Giới tính</label>
-                    <input type="radio" name="gioiTinh" value="true" checked/>Nam
-                    <input type="radio" name="gioiTinh" value="false"/>Nu
-
+                    <label>Quốc gia</label>
+                    <select name="quocGia" class="form-select">
+                        <option value="vn">Việt Nam</option>
+                        <option value="en">Anh</option>
+                    </select>
                 </div>
                 <div class="col-6">
-                    <label>Năm </label>
-                    <input type="text" class="form-control" name="namSinh"/>
+                    <label>Thành phố</label>
+                    <select name="thanhPho" class="form-select">
+                        <option value="hanoi">Hà Nội</option>
+                        <option value="london">London</option>
+                    </select>
                 </div>
             </div>
-
-            <div class="row mt-4" style="justify-content: center">
+            <div class="row mt-3">
                 <button class="btn btn-success col-1 m-3" type="submit">
                     Add
                 </button>
@@ -53,7 +55,7 @@
         </form>
     </section>
 </main>
-<footer><p style="text-align: center;">HangNT169</p></footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
