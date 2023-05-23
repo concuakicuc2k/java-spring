@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -12,7 +14,7 @@
 <header>
     <h3 style="text-align: center;">Quản Lý Cửa Hàng</h3>
     <section>
-        <a href="/cua-hang/view-add" class="btn btn-success " tabindex="-1" role="button"
+        <a href="/cua-hang/view-add" class="btn btn-info " tabindex="-1" role="button"
            aria-disabled="true">Add</a>
     </section>
 </header>
@@ -38,8 +40,6 @@
                     <td> ${ l.thanhPho } </td>
                     <td> ${ l.quocGia } </td>
                     <td>
-                        <a href="/cua-hang/detail/${l.id}" class="btn btn-primary " tabindex="-1" role="button"
-                           aria-disabled="true">Detail</a>
                         <a href="/cua-hang/view-update/${l.id}" class="btn btn-success " tabindex="-1" role="button"
                            aria-disabled="true">Update</a>
                         <a href="/cua-hang/delete/${l.id}" class="btn btn-danger " tabindex="-1" role="button"

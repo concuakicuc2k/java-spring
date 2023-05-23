@@ -8,37 +8,64 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body class="container">
+<body>
 <header>
     <h3 style="text-align: center;">Thông Tin Chi Tiết</h3>
 </header>
-<main>
+<main class="container">
     <section>
         <div class="row mt-4">
             <div class="col-6">
-                <label>Tên: </label>
-                <span>${ cuaHang.ten }</span>
+                <label>Mã</label>
+                <span>${ nhanVien.ma }</span>
             </div>
             <div class="col-6">
-                <label>Địa chỉ: </label>
-                <span>${ cuaHang.diaChi }</span>
-
+                <label>Họ</label>
+                <span>${ nhanVien.ho }</span>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-6">
-                <label>Thành phố: </label>
-                <span>${ cuaHang.thanhPho }</span>
+                <label>Tên đệm</label>
+                <span>${ nhanVien.tenDem }</span>
             </div>
             <div class="col-6">
-                <label>Quốc gia: </label>
-                <span>${ cuaHang.quocGia }</span>
+                <label>Tên</label>
+                <span>${ nhanVien.ten }</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <label>Giới tính</label>
+                <span>${ nhanVien.gioiTinh }</span>
+            </div>
+            <div class="col-6">
+                <label>Ngày sinh </label>
+                <span>${ nhanVien.ngaySinh }</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <label>Địa chỉ</label>
+                <span>${ nhanVien.diaChi }</span>
+            </div>
+            <div class="col-6">
+                <label>Số điện thoại </label>
+                <span>${ nhanVien.sdt }</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <label>Mật khẩu</label>
+                <span>${ nhanVien.password }</span>
+            </div>
+            <div class="col-6">
+                <label>Trạng thái </label>
+                <span>${ nhanVien.trangThai }</span>
             </div>
         </div>
     </section>
-
 </main>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
