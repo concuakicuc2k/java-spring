@@ -47,7 +47,7 @@
                     <td> ${ l.ngaySinh } </td>
                     <td> ${ l.sdt } </td>
                     <td> ${ l.diaChi } </td>
-                    <td> ${ l.matKhau } </td>
+                    <td> ${ l.password } </td>
                     <td> ${ l.gioiTinh == 1 ? "Nam" :"Nữ"  } </td>
                     <td> ${ l.trangThai == 1 ? "Hoạt động" : "Không hoạt động" } </td>
                     <td>

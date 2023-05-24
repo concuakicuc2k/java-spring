@@ -58,12 +58,13 @@
                     <input type="password" name="matKhau" class="form-control" />
                 </div>
             </div>
+
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Giới tính</label>
                     <select name="gioiTinh" class="form-select ">
-                        <option value="nam" ${nhanVien.gioiTinh == "nam" ? "selected" : "" } >Nam</option>
-                        <option value="nu" ${nhanVien.gioiTinh  == "nu" ? "selected" : "" } >Nữ</option>
+                        <option value="1" ${nhanVien.gioiTinh == "1" ? "selected" : "" } >Nam</option>
+                        <option value="0" ${nhanVien.gioiTinh  == "0" ? "selected" : "" } >Nữ</option>
                     </select>
                 </div>
                 <div class="col-6">

@@ -26,7 +26,7 @@ public class NhanVien {
     @Column(name = "ten")
     private String ten;
     @Column(name = "gioi_tinh")
-    private String gioiTinh;
+    private int gioiTinh;
     @Column(name = "ngay_sinh")
     private String ngaySinh;
     @Column(name = "dia_chi")
@@ -38,11 +38,11 @@ public class NhanVien {
     @Column(name = "mat_khau")
     private String password;
     @Column(name = "trang_thai")
-    private String trangThai;
+    private int trangThai;
 
     public NhanVien(String ma, String ho, String tenDem, String ten,
-                    String gioiTinh, String ngaySinh, String diaChi,
-                    String email, String sdt, String password, String trangThai) {
+                    int gioiTinh, String ngaySinh, String diaChi,
+                    String email, String sdt, String password, int trangThai) {
         this.ma = ma;
         this.ho = ho;
         this.tenDem = tenDem;

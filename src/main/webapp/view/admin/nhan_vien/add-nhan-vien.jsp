@@ -24,43 +24,45 @@
                     <label>Mã</label>
                     <form:input path="ma" />
                 </div>
-                <div class="col-6">
-                    <label>Họ</label>
-                    <form:input path="ho" />
-                </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
+                    <div class="col-6">
+                        <label>Họ</label>
+                        <form:input path="ho" />
+                    </div>
                     <label>Tên đệm</label>
                     <form:input path="tenDem" />
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên</label>
                     <form:input path="ten" />
                 </div>
-            </div>
-            <div class="row mt-3">
                 <div class="col-6">
                     <label>Email</label>
                     <form:input path="email" />
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Ngày sinh</label>
                     <form:input path="ngaySinh" />
                 </div>
-            </div>
-            <div class="row mt-3">
                 <div class="col-6">
                     <label>Số điện thoại</label>
                     <form:input path="sdt" />
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Địa chỉ</label>
                     <form:input path="diaChi" />
                 </div>
                 <div class="col-6">
                     <label>Mật khẩu</label>
-                    <form:password name="matKhau" path="matKhau" />
+                    <form:password name="password" path="password" />
                 </div>
             </div>
             <div class="row mt-3">
