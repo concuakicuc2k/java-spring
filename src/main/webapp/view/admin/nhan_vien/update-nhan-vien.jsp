@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -17,62 +17,75 @@
 </header>
 <main class="container">
     <section>
-        <form action="/nhan-vien/update/${ nhanVien.id }" method="post">
+        <form:form action="/nhan-vien/update/${ nhanVien.id }"
+                   method="post" modelAttribute="nhanVienViewModel">
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Mã</label>
-                    <input type="text" class="form-control" name="ma" value="${nhanVien.ma}" />
+                    <form:input path="ma" value="${nhanVien.ma}"/>
+                    <form:errors path="ma" class="text-danger" style="color:red"/>
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Họ</label>
-                    <input type="text" class="form-control"  name="ho" value="${nhanVien.ho}" />
+                    <form:input path="ho" value="${nhanVien.ho}" />
+                    <form:errors path="ho" class="text-danger" style="color:red"/>
                 </div>
-            </div>
-            <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên đệm</label>
-                    <input type="text" name="tenDem" class="form-control" value="${nhanVien.tenDem}" />
+                    <form:input path="tenDem" value="${nhanVien.tenDem}" />
+                    <form:errors path="tenDem" class="text-danger" style="color:red"/>
                 </div>
+            </div>
+            <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên</label>
-                    <input type="text" name="ten" class="form-control" value="${nhanVien.ten}" />
+                    <form:input path="ten" value="${nhanVien.ten}" />
+                    <form:errors path="ten" class="text-danger" style="color:red"/>
                 </div>
-            </div>
-            <div class="row mt-3">
                 <div class="col-6">
                     <label>Ngày sinh</label>
-                    <input type="date" name="ngaySinh" class="form-control" value="${nhanVien.ngaySinh}" />
-                </div>
-                <div class="col-6">
-                    <label>Số điện thoại</label>
-                    <input type="tel" name="sdt" class="form-control" value="${nhanVien.sdt}" />
+                    <form:input path="ngaySinh" value="${nhanVien.ngaySinh}" />
+                    <form:errors path="ngaySinh" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
+                    <label>Số điện thoại</label>
+                    <form:input path="sdt" value="${nhanVien.sdt}" />
+                    <form:errors path="sdt" class="text-danger" style="color:red"/>
+                </div>
+                <div class="col-6">
                     <label>Địa chỉ</label>
-                    <input type="text" name="diaChi" class="form-control" value="${nhanVien.diaChi}" />
+                    <form:input path="diaChi" value="${nhanVien.diaChi}" />
+                    <form:errors path="diaChi" class="text-danger" style="color:red"/>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label>Email</label>
+                    <form:input path="email" value="${nhanVien.email}" />
+                    <form:errors path="email" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Mật khẩu</label>
-                    <input type="password" name="matKhau" class="form-control" />
+                    <form:password name="password" path="password" value="${nhanVien.password}"/>
+                    <form:errors path="password" class="text-danger" style="color:red"/>
                 </div>
             </div>
-
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Giới tính</label>
-                    <select name="gioiTinh" class="form-select ">
-                        <option value="1" ${nhanVien.gioiTinh == "1" ? "selected" : "" } >Nam</option>
-                        <option value="0" ${nhanVien.gioiTinh  == "0" ? "selected" : "" } >Nữ</option>
-                    </select>
+                    <form:radiobutton path="gioiTinh" value="1" label="Nam" />
+                    <form:radiobutton path="gioiTinh" value="0" label="Nữ" />
+                    <form:errors path="gioiTinh" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Trạng thái</label>
-                    <select name="trangThai" class="form-select ">
-                        <option value="1" ${nhanVien.trangThai  == "1" ? "selected" : "" }>Hoạt động</option>
-                        <option value="0" ${nhanVien.trangThai  == "0" ? "selected" : "" }>Không hoạt động</option>
-                    </select>
+                    <form:radiobutton path="trangThai" value="1" label="Hoạt động" />
+                    <form:radiobutton path="trangThai" value="0" label="Không hoạt động" />
+                    <form:errors path="trangThai" class="text-danger" style="color:red"/>
                 </div>
             </div>
 
@@ -81,9 +94,10 @@
                     update
                 </button>
             </div>
-        </form>
+        </form:form>
     </section>
 </main>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>

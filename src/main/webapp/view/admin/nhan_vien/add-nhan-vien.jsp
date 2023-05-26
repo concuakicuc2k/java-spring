@@ -18,51 +18,60 @@
 <main class="container">
     <section>
         <form:form method="POST"
-              action="/nhan-vien/add" modelAttribute="nhanVienViewModel">
+                   action="/nhan-vien/store" modelAttribute="nhanVienViewModel">
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Mã</label>
                     <form:input path="ma" />
+                    <form:errors path="ma" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <div class="col-6">
-                        <label>Họ</label>
-                        <form:input path="ho" />
-                    </div>
+                    <label>Họ</label>
+                    <form:input path="ho" />
+                    <form:errors path="ho" class="text-danger" style="color:red"/>
+                </div>
+                <div class="col-6">
                     <label>Tên đệm</label>
                     <form:input path="tenDem" />
+                    <form:errors path="tenDem" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Tên</label>
                     <form:input path="ten" />
+                    <form:errors path="ten" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Email</label>
                     <form:input path="email" />
+                    <form:errors path="email" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Ngày sinh</label>
                     <form:input path="ngaySinh" />
+                    <form:errors path="ngaySinh" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Số điện thoại</label>
                     <form:input path="sdt" />
+                    <form:errors path="sdt" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <label>Địa chỉ</label>
                     <form:input path="diaChi" />
+                    <form:errors path="diaChi" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Mật khẩu</label>
                     <form:password name="password" path="password" />
+                    <form:errors path="password" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
@@ -70,11 +79,13 @@
                     <label>Giới tính</label>
                     <form:radiobutton path="gioiTinh" value="1" label="Nam" />
                     <form:radiobutton path="gioiTinh" value="0" label="Nữ" />
+                    <form:errors path="gioiTinh" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
                     <label>Trạng thái</label>
                     <form:radiobutton path="trangThai" value="1" label="Hoạt động" />
                     <form:radiobutton path="trangThai" value="0" label="Không hoạt động" />
+                    <form:errors path="trangThai" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
@@ -86,6 +97,7 @@
         </form:form>
     </section>
 </main>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

@@ -4,6 +4,7 @@ import com.poly.tuphph24187.bean.NhanVienViewModel;
 import com.poly.tuphph24187.entity.NhanVien;
 import com.poly.tuphph24187.repository.NhanVienRepository;
 import jakarta.validation.Valid;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,18 +71,15 @@ public class NhanVienController {
         return "admin/nhan_vien/nhan-vien";
     }
 
+    @GetMapping("detail/{id}")
+    public String detailLopHoc(@PathVariable("id") UUID id, Model model) {
+        NhanVien nhanVien = nhanVienRepository.findById(id).get();
+        model.addAttribute("nhanVien", nhanVien);
+        return "admin/nhan_vien/detail-nhan-vien";
+    }
+
     @PostMapping("add")
-    public String add(@RequestParam("ma") String ma,
-                      @RequestParam("ho") String ho,
-                      @RequestParam("tenDem") String tenDem,
-                      @RequestParam("ten") String ten,
-                      @RequestParam("email") String email,
-                      @RequestParam("ngaySinh") String ngaySinh,
-                      @RequestParam("sdt") String sdt,
-                      @RequestParam("diaChi") String diaChi,
-                      @RequestParam("password") String password,
-                      @RequestParam("gioiTinh") int gioiTinh,
-                      @RequestParam("trangThai") int trangThai,
+    public String add(NhanVien nhanVien,
                       @Valid @ModelAttribute("nhanVienViewModel") NhanVienViewModel nhanVienViewModel,
                       BindingResult result
     ) {
@@ -89,9 +87,17 @@ public class NhanVienController {
             // Báo lỗi
             return "redirect:/nhan-vien/view-add";
         } else {
-            // Thành công
-            NhanVien nhanVien = new NhanVien(ma ,ho ,tenDem ,ten,gioiTinh ,ngaySinh ,diaChi ,
-                    email,sdt  ,password  ,trangThai );
+             //Thành công
+            nhanVienViewModel.setMa(nhanVien.getMa());
+            nhanVienViewModel.setHo(nhanVien.getHo());
+            nhanVienViewModel.setTenDem(nhanVien.getTenDem());
+            nhanVienViewModel.setTen(nhanVien.getTen());
+            nhanVienViewModel.setGioiTinh(String.valueOf(nhanVien.getGioiTinh()));
+            nhanVienViewModel.setNgaySinh(nhanVien.getDiaChi());
+            nhanVienViewModel.setDiaChi(nhanVien.getDiaChi());
+            nhanVienViewModel.setEmail(nhanVien.getEmail());
+            nhanVienViewModel.setSdt(nhanVien.getSdt());
+            nhanVienViewModel.setPassword(nhanVien.getPassword());
             nhanVienRepository.save(nhanVien);
             return "redirect:/nhan-vien/hien-thi";
         }

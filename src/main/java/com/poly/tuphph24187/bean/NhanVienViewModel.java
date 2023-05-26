@@ -1,8 +1,8 @@
 package com.poly.tuphph24187.bean;
 
-
-import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -32,7 +32,7 @@ public class NhanVienViewModel {
     @Length(max = 255,message = ("Không quá 255 ký tự"))
     private String ten;
 
-    @NotNull
+    @NotNull(message = "Không được để trống")
     private String gioiTinh;
 
     @NotBlank(message = "Không được để trống")
@@ -55,7 +55,7 @@ public class NhanVienViewModel {
     @Length(max = 255,message = ("Không quá 255 ký tự"))
     private String password;
 
-    @NotNull
+    @NotNull(message = "Không được để trống")
     private String trangThai;
 
 

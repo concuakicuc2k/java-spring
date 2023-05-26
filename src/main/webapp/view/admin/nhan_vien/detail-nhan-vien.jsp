@@ -16,52 +16,52 @@
     <section>
         <div class="row mt-4">
             <div class="col-6">
-                <label>Mã</label>
-                <span>${ nhanVien.ma }</span>
+                <label>Mã: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.ma }</span>
             </div>
             <div class="col-6">
-                <label>Họ</label>
-                <span>${ nhanVien.ho }</span>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-6">
-                <label>Tên đệm</label>
-                <span>${ nhanVien.tenDem }</span>
-            </div>
-            <div class="col-6">
-                <label>Tên</label>
-                <span>${ nhanVien.ten }</span>
+                <label>Họ: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.ho }</span>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-6">
-                <label>Giới tính</label>
-                <span>${ nhanVien.gioiTinh }</span>
+                <label>Tên đệm: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.tenDem }</span>
             </div>
             <div class="col-6">
-                <label>Ngày sinh </label>
-                <span>${ nhanVien.ngaySinh }</span>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-6">
-                <label>Địa chỉ</label>
-                <span>${ nhanVien.diaChi }</span>
-            </div>
-            <div class="col-6">
-                <label>Số điện thoại </label>
-                <span>${ nhanVien.sdt }</span>
+                <label>Tên: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.ten }</span>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-6">
-                <label>Mật khẩu</label>
-                <span>${ nhanVien.password }</span>
+                <label>Giới tính: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.gioiTinh == 1 ? "Nam" :"Nữ" }</span>
             </div>
             <div class="col-6">
-                <label>Trạng thái </label>
-                <span>${ nhanVien.trangThai }</span>
+                <label>Ngày sinh: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.ngaySinh }</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <label>Địa chỉ: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.diaChi }</span>
+            </div>
+            <div class="col-6">
+                <label>Số điện thoại: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.sdt }</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <label>Mật khẩu: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.email }</span>
+            </div>
+            <div class="col-6">
+                <label>Trạng thái: </label>
+                <span class="text-danger" style="color:#0f5132">${ nhanVien.trangThai == 1 ? "Hoạt động" : "Không hoạt động" }</span>
             </div>
         </div>
     </section>
