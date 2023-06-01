@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
-public class CuaHangViewModel {
+public class ChucVuViewModel {
 
     @NotBlank(message = "Không được để trống")
     @Length(max = 255,message = ("Không quá 255 ký tự"))
@@ -18,16 +18,6 @@ public class CuaHangViewModel {
 
     @NotBlank(message = "Không được để trống")
     @Length(max = 255,message = ("Không quá 255 ký tự"))
-    private String tenCuaHang;
-
-    @NotBlank(message = "Không được để trống")
-    @Length(max = 255,message = ("Không quá 255 ký tự"))
-    private String diaChi;
-
-
-    private String thanhPho;
-
-
-    private String quocGia;
+    private String tenChucVu;
 
 }

@@ -17,84 +17,83 @@
 </header>
 <main class="container">
     <section>
-        <form:form action="/nhan-vien/update/${ nhanVien.id }"
-                   method="post" modelAttribute="nhanVienViewModel">
+        <form action="/nhan-vien/update/${ nhanVien.id }"
+                   method="post" >
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Mã</label>
-                    <form:input path="ma" value="${nhanVien.ma}"/>
-                    <form:errors path="ma" class="text-danger" style="color:red"/>
+                    <label class="form-label">Mã</label>
+                    <input type="text" class="form-control" name="ma" value="${ nhanVien.ma}">
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Họ</label>
+                    <input type="text" class="form-control" name="ho" value="${ nhanVien.ho}">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Họ</label>
-                    <form:input path="ho" value="${nhanVien.ho}" />
-                    <form:errors path="ho" class="text-danger" style="color:red"/>
+                    <label class="form-label">Tên đệm</label>
+                    <input type="text" class="form-control" name="tenDem" value="${ nhanVien.tenDem }">
                 </div>
                 <div class="col-6">
-                    <label>Tên đệm</label>
-                    <form:input path="tenDem" value="${nhanVien.tenDem}" />
-                    <form:errors path="tenDem" class="text-danger" style="color:red"/>
+                    <label class="form-label">Tên</label>
+                    <input type="text" class="form-control" name="ten" value="${ nhanVien.ten }">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Tên</label>
-                    <form:input path="ten" value="${nhanVien.ten}" />
-                    <form:errors path="ten" class="text-danger" style="color:red"/>
+                    <label class="form-label">Số điện thoại</label>
+                    <input type="tel" class="form-control" name="sdt" value="${ nhanVien.sdt }">
                 </div>
                 <div class="col-6">
-                    <label>Ngày sinh</label>
-                    <form:input path="ngaySinh" value="${nhanVien.ngaySinh}" />
-                    <form:errors path="ngaySinh" class="text-danger" style="color:red"/>
+                    <label class="form-label">Ngày sinh</label>
+                    <input type="date" class="form-control" name="ngaySinh" value="${ nhanVien.ngaySinh }">
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Số điện thoại</label>
-                    <form:input path="sdt" value="${nhanVien.sdt}" />
-                    <form:errors path="sdt" class="text-danger" style="color:red"/>
+                    <label class="form-label">Địa chỉ</label>
+                    <input type="text" class="form-control" name="diaChi" value="${ nhanVien.diaChi }">
                 </div>
                 <div class="col-6">
-                    <label>Địa chỉ</label>
-                    <form:input path="diaChi" value="${nhanVien.diaChi}" />
-                    <form:errors path="diaChi" class="text-danger" style="color:red"/>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label>Email</label>
-                    <form:input path="email" value="${nhanVien.email}" />
-                    <form:errors path="email" class="text-danger" style="color:red"/>
-                </div>
-                <div class="col-6">
-                    <label>Mật khẩu</label>
-                    <form:password name="password" path="password" value="${nhanVien.password}"/>
-                    <form:errors path="password" class="text-danger" style="color:red"/>
+                    <label class="form-label">Giới tính</label>
+                    <input type="radio" name="gioiTinh" value="1" ${ nhanVien.gioiTinh == "1" ? "checked" : "" } checked>Nam
+                    <input type="radio" name="gioiTinh" value="0" ${ nhanVien.gioiTinh == "0" ? "checked" : "" } >Nữ
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Giới tính</label>
-                    <form:radiobutton path="gioiTinh" value="1" label="Nam" />
-                    <form:radiobutton path="gioiTinh" value="0" label="Nữ" />
-                    <form:errors path="gioiTinh" class="text-danger" style="color:red"/>
+                    <label class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control" name="password" value="${ nhanVien.password }">
                 </div>
                 <div class="col-6">
-                    <label>Trạng thái</label>
-                    <form:radiobutton path="trangThai" value="1" label="Hoạt động" />
-                    <form:radiobutton path="trangThai" value="0" label="Không hoạt động" />
-                    <form:errors path="trangThai" class="text-danger" style="color:red"/>
+                    <label class="form-label">Trạng Thái</label>
+                    <input type="radio" name="trangThai" value="0" ${ nhanVien.trangThai == "0" ? "checked" : "" } checked> Hoạt động
+                    <input type="radio" name="trangThai" value="1" ${ nhanVien.trangThai == "1" ? "checked" : "" } > Không hoạt động
                 </div>
             </div>
 
-            <div class="row mt-3" style="justify-content: center">
-                <button class="btn btn-success col-1 m-3" type="submit">
-                    update
-                </button>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <label class="form-label">Chức vụ</label>
+                    <select name="chucVu">
+                        <c:forEach items="${ chucVus }" var="cv">
+                            <option value="${cv.id}" ${cv.id == nhanVien.chucVu.id ? 'selected="selected"' : ''}> ${cv.tenChucVu} </option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Cửa hàng</label>
+                    <select name="cuaHang">
+                        <c:forEach items="${ cuaHangs }" var="ch">
+                            <option value="${ch.id}" ${ch.id == nhanVien.cuaHang.id ? 'selected="selected"' : ''}> ${ch.tenCuaHang} </option>
+                        </c:forEach>
+                    </select>
+                </div>
             </div>
-        </form:form>
+            <div class="row mt-3" style="justify-content: center">
+                <button class="btn btn-success" type="submit">Update</button>
+            </div>
+        </form>
     </section>
 </main>
 

@@ -19,19 +19,19 @@
                    method="post" modelAttribute="cuaHangViewModel">
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Mã</label>
+                    <label class="form-label">Mã</label>
                     <form:input path="ma" value="${cuaHang.ma}" />
                     <form:errors path="ma" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Tên</label>
-                    <form:input path="ten" value="${cuaHang.ten}" />
-                    <form:errors path="ten" class="text-danger" style="color:red"/>
+                    <label class="form-label">Tên</label>
+                    <form:input path="tenCuaHang" value="${cuaHang.tenCuaHang}" />
+                    <form:errors path="tenCuaHang" class="text-danger" style="color:red"/>
                 </div>
                 <div class="col-6">
-                    <label>Địa chỉ</label>
+                    <label class="form-label">Địa chỉ</label>
                     <form:input path="diaChi" value="${cuaHang.diaChi}" />
                     <form:errors path="diaChi" class="text-danger" style="color:red"/>
                 </div>
@@ -39,18 +39,18 @@
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label>Quốc gia</label>
-                    <select name="quocGia" class="form-select ">
+                    <label class="form-label">Quốc gia</label>
+                    <form:select name="quocGia" path="quocGia">
                         <option value="vn" ${cuaHang.quocGia  == "vn" ? "selected" : "" } >Việt Nam</option>
                         <option value="en" ${cuaHang.quocGia  == "en" ? "selected" : "" } >Anh</option>
-                    </select>
+                    </form:select>
                 </div>
                 <div class="col-6">
-                    <label>Thành phố</label>
-                    <select name="thanhPho" class="form-select ">
+                    <label class="form-label">Thành phố</label>
+                    <form:select name="thanhPho" path="thanhPho">
                         <option value="hanoi" ${cuaHang.thanhPho  == "hanoi" ? "selected" : "" }>Hà Nội</option>
                         <option value="london" ${cuaHang.thanhPho  == "london" ? "selected" : "" }>London</option>
-                    </select>
+                    </form:select>
                 </div>
             </div>
             <div class="row mt-3" style="justify-content: center">

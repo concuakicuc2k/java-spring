@@ -3,13 +3,16 @@ package com.poly.tuphph24187.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.UUID;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
-@ToString
 @Entity
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "nhan_vien")
 public class NhanVien {
 
@@ -31,8 +34,6 @@ public class NhanVien {
     private String ngaySinh;
     @Column(name = "dia_chi")
     private String diaChi;
-    @Column(name = "email")
-    private String email;
     @Column(name = "sdt")
     private String sdt;
     @Column(name = "mat_khau")
@@ -40,19 +41,13 @@ public class NhanVien {
     @Column(name = "trang_thai")
     private int trangThai;
 
-    public NhanVien(String ma, String ho, String tenDem, String ten,
-                    int gioiTinh, String ngaySinh, String diaChi,
-                    String email, String sdt, String password, int trangThai) {
-        this.ma = ma;
-        this.ho = ho;
-        this.tenDem = tenDem;
-        this.ten = ten;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.diaChi = diaChi;
-        this.email = email;
-        this.sdt = sdt;
-        this.password = password;
-        this.trangThai = trangThai;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cv", referencedColumnName = "id")
+    private ChucVu chucVu;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_ch", referencedColumnName = "id")
+    private CuaHang cuaHang;
+
+
 }

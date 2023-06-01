@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Tuphph24187Application {
+public class Sof3021Sd17306Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Tuphph24187Application.class, args);
+        SpringApplication.run(Sof3021Sd17306Application.class, args);
     }
 
 }

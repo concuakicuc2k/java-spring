@@ -1,16 +1,18 @@
 package com.poly.tuphph24187.bean;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import lombok.*;
+
+import com.poly.tuphph24187.entity.ChucVu;
+import com.poly.tuphph24187.entity.CuaHang;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
@@ -32,7 +34,6 @@ public class NhanVienViewModel {
     @Length(max = 255,message = ("Không quá 255 ký tự"))
     private String ten;
 
-    @NotNull(message = "Không được để trống")
     private String gioiTinh;
 
     @NotBlank(message = "Không được để trống")
@@ -55,8 +56,10 @@ public class NhanVienViewModel {
     @Length(max = 255,message = ("Không quá 255 ký tự"))
     private String password;
 
-    @NotNull(message = "Không được để trống")
     private String trangThai;
 
+    private ChucVu chucVu;
+
+    private CuaHang cuaHang;
 
 }

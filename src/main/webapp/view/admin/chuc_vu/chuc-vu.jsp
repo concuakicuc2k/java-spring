@@ -12,10 +12,9 @@
 </head>
 <body class="container">
 <header>
-    <h3 style="text-align: center;">Quản Lý Cửa Hàng</h3>
+    <h3 style="text-align: center;">Quản Lý Chức Vụ</h3>
     <section>
-        <a href="/cua-hang/view-add" class="btn btn-info " tabindex="-1" role="button"
-           aria-disabled="true">Add</a>
+        <a href="/chuc-vu/view-add" class="btn btn-info">Add</a>
     </section>
 </header>
 <main>
@@ -25,23 +24,16 @@
             <tr>
                 <th scope="col">Mã</th>
                 <th scope="col">Tên</th>
-                <th scope="col">Địa chỉ</th>
-                <th scope="col">Thành phố</th>
-                <th scope="col">Quốc gia</th>
-                <th colspan="2">Thao tác</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${ cuaHangs }" var="l">
+            <c:forEach items="${ chucVus }" var="l">
                 <tr>
                     <td> ${ l.ma } </td>
-                    <td> ${ l.tenCuaHang } </td>
-                    <td> ${ l.diaChi } </td>
-                    <td> ${ l.thanhPho } </td>
-                    <td> ${ l.quocGia } </td>
+                    <td> ${ l.tenChucVu } </td>
                     <td>
-                        <a href="/cua-hang/view-update/${l.id}" class="btn btn-success">Update</a>
-                        <a href="/cua-hang/delete/${l.id}" class="btn btn-danger">Remove</a>
+                        <a href="/chuc-vu/view-update/${l.id}" class="btn btn-success">Update</a>
+                        <a href="/chuc-vu/delete/${l.id}" class="btn btn-danger">Remove</a>
                     </td>
                 </tr>
             </c:forEach>

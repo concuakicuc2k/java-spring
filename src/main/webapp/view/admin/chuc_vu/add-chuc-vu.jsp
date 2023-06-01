@@ -17,41 +17,18 @@
 </header>
 <main class="container">
     <section>
-        <form:form action="/cua-hang/add"
-                 method="POST" modelAttribute="cuaHangViewModel">
+        <form:form action="/chuc-vu/add"
+                 method="POST" modelAttribute="chucVuViewModel">
             <div class="row mt-3">
                 <div class="col-6">
                     <label class="form-label">Mã</label>
                     <form:input path="ma" />
                     <form:errors path="ma" class="text-danger" style="color:red"/>
                 </div>
-            </div>
-            <div class="row mt-3">
                 <div class="col-6">
                     <label class="form-label">Tên</label>
-                    <form:input path="tenCuaHang" />
-                    <form:errors path="tenCuaHang" class="text-danger" style="color:red"/>
-                </div>
-                <div class="col-6">
-                    <label class="form-label">Địa chỉ</label>
-                    <form:input path="diaChi" />
-                    <form:errors path="diaChi" class="text-danger" style="color:red"/>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label class="form-label">Quốc gia</label>
-                    <form:select name="quocGia" path="quocGia">
-                        <form:option value="vn">Việt Nam</form:option>
-                        <form:option value="en">Anh</form:option>
-                    </form:select>
-                </div>
-                <div class="col-6">
-                    <label class="form-label">Thành phố</label>
-                    <form:select name="thanhPho" path="thanhPho">
-                        <form:option value="hanoi">Hà Nội</form:option>
-                        <form:option value="london">London</form:option>
-                    </form:select>
+                    <form:input path="tenChucVu" />
+                    <form:errors path="tenChucVu" class="text-danger" style="color:red"/>
                 </div>
             </div>
             <div class="row mt-3">
