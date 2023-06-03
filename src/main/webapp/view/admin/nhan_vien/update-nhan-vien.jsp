@@ -17,56 +17,67 @@
 </header>
 <main class="container">
     <section>
-        <form action="/nhan-vien/update/${ nhanVien.id }"
-                   method="post" >
+        <form:form action="/nhan-vien/update/${ nhanVien.id }"
+                   method="post" modelAttribute="nhanVienViewModel">
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Mã</label>
-                    <input type="text" class="form-control" name="ma" value="${ nhanVien.ma}">
+                    <form:label path="ma">Mã</form:label>
+                    <form:input path="ma" value="${ nhanVien.ma}"  cssClass="form-control" ></form:input>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Họ</label>
-                    <input type="text" class="form-control" name="ho" value="${ nhanVien.ho}">
+                    <form:label path="ho">Họ</form:label>
+                    <form:input path="ho" value="${ nhanVien.ho }" cssClass="form-control" ></form:input>
+                    <form:errors path="ho" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Tên đệm</label>
-                    <input type="text" class="form-control" name="tenDem" value="${ nhanVien.tenDem }">
+                    <form:label path="tenDem">Tên đệm</form:label>
+                    <form:input path="tenDem" value="${ nhanVien.tenDem }" cssClass="form-control" ></form:input>
+                    <form:errors path="tenDem" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Tên</label>
-                    <input type="text" class="form-control" name="ten" value="${ nhanVien.ten }">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label class="form-label">Số điện thoại</label>
-                    <input type="tel" class="form-control" name="sdt" value="${ nhanVien.sdt }">
-                </div>
-                <div class="col-6">
-                    <label class="form-label">Ngày sinh</label>
-                    <input type="date" class="form-control" name="ngaySinh" value="${ nhanVien.ngaySinh }">
+                    <form:label path="ten">Tên</form:label>
+                    <form:input path="ten" value="${ nhanVien.ten}" cssClass="form-control" ></form:input>
+                    <form:errors path="ten" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Địa chỉ</label>
-                    <input type="text" class="form-control" name="diaChi" value="${ nhanVien.diaChi }">
+                    <form:label path="sdt">Số điện thoại</form:label>
+                    <form:input path="sdt" type="tel" value="${ nhanVien.sdt }" cssClass="form-control" ></form:input>
+                    <form:errors path="sdt" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Giới tính</label>
+                    <form:label path="ngaySinh">Ngày sinh</form:label>
+                    <form:input path="ngaySinh" type="date" value="${ nhanVien.ngaySinh}" cssClass="form-control" ></form:input>
+                    <form:errors path="ngaySinh" cssClass="text-danger" ></form:errors>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <form:label path="diaChi">Địa chỉ</form:label>
+                    <form:input path="diaChi" value="${ nhanVien.diaChi }" cssClass="form-control" ></form:input>
+                    <form:errors path="diaChi" cssClass="text-danger" ></form:errors>
+                </div>
+                <div class="col-6">
+                    <form:label path="gioiTinh">Giới tính</form:label>
+<%--                    <form:radiobutton path="gioiTinh" value="1"/> <form:label path="gioiTinh" for="gioiTinh1"> Nam</form:label>--%>
+<%--                    <form:radiobutton path="gioiTinh" value="0"/> <form:label path="gioiTinh" for="gioiTinh2">Nữ </form:label>--%>
                     <input type="radio" name="gioiTinh" value="1" ${ nhanVien.gioiTinh == "1" ? "checked" : "" } checked>Nam
                     <input type="radio" name="gioiTinh" value="0" ${ nhanVien.gioiTinh == "0" ? "checked" : "" } >Nữ
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-6">
-                    <label class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control" name="password" value="${ nhanVien.password }">
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <form:label path="password">Mật khẩu</form:label>
+                        <form:password path="password" value="${ nhanVien.password }" cssClass="form-control" ></form:password>
+                        <form:errors path="password" cssClass="text-danger" ></form:errors>
+                    </div>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Trạng Thái</label>
+                    <form:label path="trangThai">Trạng thái</form:label>
                     <input type="radio" name="trangThai" value="0" ${ nhanVien.trangThai == "0" ? "checked" : "" } checked> Hoạt động
                     <input type="radio" name="trangThai" value="1" ${ nhanVien.trangThai == "1" ? "checked" : "" } > Không hoạt động
                 </div>
@@ -93,7 +104,7 @@
             <div class="row mt-3" style="justify-content: center">
                 <button class="btn btn-success" type="submit">Update</button>
             </div>
-        </form>
+        </form:form>
     </section>
 </main>
 

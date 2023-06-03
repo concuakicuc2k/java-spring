@@ -19,67 +19,76 @@
 <div class="container">
 <main>
     <section>
-        <form method="POST"
-                   action="/nhan-vien/add"  >
+        <form:form method="POST"
+                   action="/nhan-vien/add"  modelAttribute="nhanVienViewModel">
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Mã</label>
-                    <input type="text" class="form-control" name="ma">
+                    <form:label path="ma">Mã</form:label>
+                    <form:input path="ma"  cssClass="form-control" ></form:input>
+                    <form:errors path="ma" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Họ</label>
-                    <input type="text" class="form-control" name="ho">
+                    <form:label path="ho">Họ</form:label>
+                    <form:input path="ho" cssClass="form-control" ></form:input>
+                    <form:errors path="ho" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Tên đệm</label>
-                    <input type="text" class="form-control" name="tenDem">
+                    <form:label path="tenDem">Tên đệm</form:label>
+                    <form:input path="tenDem" cssClass="form-control" ></form:input>
+                    <form:errors path="tenDem" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Tên</label>
-                    <input type="text" class="form-control" name="ten">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <label class="form-label">Số điện thoại</label>
-                    <input type="tel" class="form-control" name="sdt">
-                </div>
-                <div class="col-6">
-                    <label class="form-label">Ngày sinh</label>
-                    <input type="date" class="form-control" name="ngaySinh">
+                    <form:label path="ten">Tên</form:label>
+                    <form:input path="ten" cssClass="form-control" ></form:input>
+                    <form:errors path="ten" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Địa chỉ</label>
-                    <input type="text" class="form-control" name="diaChi">
+                    <form:label path="sdt">Số điện thoại</form:label>
+                    <form:input path="sdt" type="tel" cssClass="form-control" ></form:input>
+                    <form:errors path="sdt" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Giới tính</label>
-                    <input type="radio" name="gioiTinh" value="1" checked>Nam
-                    <input type="radio" name="gioiTinh" value="0">Nữ
+                    <form:label path="ngaySinh">Ngày sinh</form:label>
+                    <form:input path="ngaySinh" type="date" cssClass="form-control" ></form:input>
+                    <form:errors path="ngaySinh" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control" name="password">
+                    <form:label path="diaChi">Địa chỉ</form:label>
+                    <form:input path="diaChi" cssClass="form-control" ></form:input>
+                    <form:errors path="diaChi" cssClass="text-danger" ></form:errors>
+                </div>
+                <div class="col-6">
+                    <form:label path="gioiTinh">Giới tính</form:label>
+                    <form:radiobutton path="gioiTinh" value="1"/> <form:label path="gioiTinh" for="gioiTinh1"> Nam</form:label>
+                    <form:radiobutton path="gioiTinh" value="0"/> <form:label path="gioiTinh" for="gioiTinh2">Nữ </form:label>
+                    <form:errors path="gioiTinh" cssClass="text-danger" ></form:errors>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <form:label path="password">Mật khẩu</form:label>
+                    <form:password path="password" cssClass="form-control" ></form:password>
+                    <form:errors path="password" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-6">
-                    <label class="form-label">Chức vụ</label>
-                    <select name="chucVu">
+                    <form:label path="chucVu">Chức vụ</form:label>
+                    <form:select path="chucVu">
                         <c:forEach items="${ chucVus }" var="cv">
-                            <option value="${cv.id}">${cv.tenChucVu}</option>
+                            <form:option value="${cv.id}">${cv.tenChucVu}</form:option>
                         </c:forEach>
-                    </select>
+                    </form:select>
                 </div>
                 <div class="col-6">
-                    <label class="form-label">Cửa hàng</label>
+                    <form:label path="cuaHang">Cửa hàng</form:label>
                     <select name="cuaHang">
                         <c:forEach items="${ cuaHangs }" var="ch">
                             <option value="${ch.id}">${ch.tenCuaHang}</option>
@@ -88,9 +97,9 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <button class="btn btn-success" type="submit">Add</button>
+                <button class="btn btn-success" type="submit" >Add</button>
             </div>
-        </form>
+        </form:form>
     </section>
 </main>
 </div>
