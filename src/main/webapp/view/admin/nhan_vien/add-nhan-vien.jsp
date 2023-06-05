@@ -25,56 +25,47 @@
                 <div class="col-6">
                     <form:label path="ma">Mã</form:label>
                     <form:input path="ma"  cssClass="form-control" ></form:input>
-                    <form:errors path="ma" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
                     <form:label path="ho">Họ</form:label>
                     <form:input path="ho" cssClass="form-control" ></form:input>
-                    <form:errors path="ho" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <form:label path="tenDem">Tên đệm</form:label>
                     <form:input path="tenDem" cssClass="form-control" ></form:input>
-                    <form:errors path="tenDem" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
                     <form:label path="ten">Tên</form:label>
                     <form:input path="ten" cssClass="form-control" ></form:input>
-                    <form:errors path="ten" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <form:label path="sdt">Số điện thoại</form:label>
                     <form:input path="sdt" type="tel" cssClass="form-control" ></form:input>
-                    <form:errors path="sdt" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
                     <form:label path="ngaySinh">Ngày sinh</form:label>
                     <form:input path="ngaySinh" type="date" cssClass="form-control" ></form:input>
-                    <form:errors path="ngaySinh" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <form:label path="diaChi">Địa chỉ</form:label>
                     <form:input path="diaChi" cssClass="form-control" ></form:input>
-                    <form:errors path="diaChi" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
                     <form:label path="gioiTinh">Giới tính</form:label>
                     <form:radiobutton path="gioiTinh" value="1"/> <form:label path="gioiTinh" for="gioiTinh1"> Nam</form:label>
                     <form:radiobutton path="gioiTinh" value="0"/> <form:label path="gioiTinh" for="gioiTinh2">Nữ </form:label>
-                    <form:errors path="gioiTinh" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-6">
                     <form:label path="password">Mật khẩu</form:label>
                     <form:password path="password" cssClass="form-control" ></form:password>
-                    <form:errors path="password" cssClass="text-danger" ></form:errors>
                 </div>
             </div>
 
@@ -95,6 +86,9 @@
                         </c:forEach>
                     </select>
                 </div>
+            </div>
+            <div class="row mt-3">
+                    <form:errors path="*" cssClass="text-danger" ></form:errors>
             </div>
             <div class="row mt-3">
                 <button class="btn btn-success" type="submit" >Add</button>

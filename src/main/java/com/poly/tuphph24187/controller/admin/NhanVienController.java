@@ -1,15 +1,13 @@
 package com.poly.tuphph24187.controller.admin;
 
 import com.poly.tuphph24187.bean.NhanVienViewModel;
-import com.poly.tuphph24187.entity.ChucVu;
-import com.poly.tuphph24187.entity.CuaHang;
-import com.poly.tuphph24187.entity.NhanVien;
+import com.poly.tuphph24187.entity.admin.ChucVu;
+import com.poly.tuphph24187.entity.admin.CuaHang;
+import com.poly.tuphph24187.entity.admin.NhanVien;
 import com.poly.tuphph24187.repository.ChucVuRepository;
 import com.poly.tuphph24187.repository.CuaHangRepository;
 import com.poly.tuphph24187.repository.NhanVienRepository;
 
-import jakarta.validation.Valid;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -142,7 +140,7 @@ public class NhanVienController {
             List<CuaHang> cuaHangs = cuaHangRepository.findAll();
             model.addAttribute("cuaHangs", cuaHangs);
             model.addAttribute("nhanVien", nhanVien);
-            return "admin/nhan_vien/update-nhan-vien";
+            return "redirect:/nhan-vien/view-update/{id}";
         } else {
             CuaHang cuaHang = cuaHangRepository.findById(cuaHangid.getId()).orElse(null);
             ChucVu chucVu = chucVuRepository.findById(chucVuid.getId()).orElse(null);

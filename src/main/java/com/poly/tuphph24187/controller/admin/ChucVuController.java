@@ -1,7 +1,7 @@
 package com.poly.tuphph24187.controller.admin;
 
 import com.poly.tuphph24187.bean.ChucVuViewModel;
-import com.poly.tuphph24187.entity.ChucVu;
+import com.poly.tuphph24187.entity.admin.ChucVu;
 import com.poly.tuphph24187.repository.ChucVuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -72,14 +72,19 @@ public class ChucVuController {
     @PostMapping("add")
     public String add(
                       @RequestParam("ma") String ma,
-                      @RequestParam("tenChucVu") String tenChucVu
+                      @RequestParam("tenChucVu") String tenChucVu,
+                      @Validated @ModelAttribute("chucVuViewModel") ChucVuViewModel chucVuViewModel,
+                      BindingResult result
     ) {
-
-
-        ChucVu chucVu = new ChucVu(ma,tenChucVu);
-        chucVuRepository.save(chucVu);
-        return "redirect:/chuc-vu/hien-thi";
-
+        if (result.hasErrors()) {
+            // Báo lỗi
+            return "redirect:/chuc-vu/view-add";
+        } else {
+            // Thành công
+            ChucVu chucVu = new ChucVu(ma,tenChucVu);
+            chucVuRepository.save(chucVu);
+            return "redirect:/chuc-vu/hien-thi";
+        }
     }
 
     @PostMapping("update/{id}")

@@ -53,7 +53,6 @@
                     <td> ${ l.cuaHang.tenCuaHang } </td>
                     <td> ${ l.chucVu.tenChucVu } </td>
                     <td>
-                        <a href="/nhan-vien/detail/${l.id}" class="btn btn-primary">Detail</a>
                         <a href="/nhan-vien/view-update/${l.id}" class="btn btn-info ">Update</a>
                         <a href="/nhan-vien/delete/${l.id}" class="btn btn-danger " >Remove</a>
                     </td>

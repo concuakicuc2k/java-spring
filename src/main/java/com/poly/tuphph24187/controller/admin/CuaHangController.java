@@ -1,7 +1,7 @@
 package com.poly.tuphph24187.controller.admin;
 
 import com.poly.tuphph24187.bean.CuaHangViewModel;
-import com.poly.tuphph24187.entity.CuaHang;
+import com.poly.tuphph24187.entity.admin.CuaHang;
 import com.poly.tuphph24187.repository.CuaHangRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,13 +76,20 @@ public class CuaHangController {
                       @RequestParam("diaChi") String diaChi,
                       @RequestParam("thanhPho") String thanhPho,
                       @RequestParam("quocGia") String quocGia,
-                      CuaHangViewModel cuaHangViewModel
+                      @Validated @ModelAttribute("cuaHangViewModel") CuaHangViewModel cuaHangViewModel,
+                      BindingResult result
     ) {
+        if (result.hasErrors()) {
+            // Báo lỗi
+            return "redirect:/cua-hang/view-add";
+        } else {
+            // Thành công
+            CuaHang cuaHang = new CuaHang(ma,tenCuaHang,diaChi,thanhPho,quocGia);
+            cuaHangRepository.save(cuaHang);
+            return "redirect:/cua-hang/hien-thi";
+        }
 
 
-        CuaHang cuaHang = new CuaHang(ma,tenCuaHang,diaChi,thanhPho,quocGia);
-        cuaHangRepository.save(cuaHang);
-        return "redirect:/cua-hang/hien-thi";
 
     }
 

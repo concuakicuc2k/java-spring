@@ -62,19 +62,15 @@
                 </div>
                 <div class="col-6">
                     <form:label path="gioiTinh">Giới tính</form:label>
-<%--                    <form:radiobutton path="gioiTinh" value="1"/> <form:label path="gioiTinh" for="gioiTinh1"> Nam</form:label>--%>
-<%--                    <form:radiobutton path="gioiTinh" value="0"/> <form:label path="gioiTinh" for="gioiTinh2">Nữ </form:label>--%>
                     <input type="radio" name="gioiTinh" value="1" ${ nhanVien.gioiTinh == "1" ? "checked" : "" } checked>Nam
                     <input type="radio" name="gioiTinh" value="0" ${ nhanVien.gioiTinh == "0" ? "checked" : "" } >Nữ
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="row mt-3">
-                    <div class="col-6">
-                        <form:label path="password">Mật khẩu</form:label>
-                        <form:password path="password" value="${ nhanVien.password }" cssClass="form-control" ></form:password>
-                        <form:errors path="password" cssClass="text-danger" ></form:errors>
-                    </div>
+                <div class="col-6">
+                    <form:label path="password">Mật khẩu</form:label>
+                    <form:password path="password" value="${ nhanVien.password }" cssClass="form-control" ></form:password>
+                    <form:errors path="password" cssClass="text-danger" ></form:errors>
                 </div>
                 <div class="col-6">
                     <form:label path="trangThai">Trạng thái</form:label>

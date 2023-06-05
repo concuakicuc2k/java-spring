@@ -1,6 +1,6 @@
 package com.poly.tuphph24187.repository;
 
-import com.poly.tuphph24187.entity.ChucVu;
+import com.poly.tuphph24187.entity.admin.ChucVu;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
